@@ -1,0 +1,4 @@
+"beggining of template file": {
+    "prefix": "templ",
+    "body": "package main\n\nimport (\n\t\"os\"\n\t\"log\"\n\t\"text/template\"\n)\n\nvar tpl *template.Template\n\nfunc init() {\n\ttpl = template.Must(template.ParseGlob(\"templates/*\"))\n}\n\nfunc main() {\n\terr := tpl.ExecuteTemplate(os.Stdout, \"tpl.gohtml\", x)\n\tif err != nil {\n\tlog.Fatalln(err)\n}\n}"
+}
